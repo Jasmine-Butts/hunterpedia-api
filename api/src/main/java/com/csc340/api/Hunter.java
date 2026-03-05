@@ -18,6 +18,9 @@ public class Hunter {
     public String name;
 
     @Column(nullable = false)
+    public String nenType;
+
+    @Column(nullable = false)
     public String abilities;
 
     @Column(nullable = false)
@@ -30,20 +33,22 @@ public class Hunter {
     }
 
     // constructor for adding new hunter
-    public Hunter (String name, String abilities, String background, String imageURL){
+    public Hunter (String name, String abilities, String background, String imageURL, String nenType){
         this.name = name;
         this.abilities = abilities;
         this.background = background;
         this.imageURL = imageURL;
+        this.nenType = nenType;
     }
 
     // constructor for known id
-    public Hunter (Long hunterId, String name, String abilities, String background, String imageURL){
+    public Hunter (Long hunterId, String name, String abilities, String background, String imageURL, String nenType){
         this.hunterId = hunterId;
         this.name = name;
         this.abilities = abilities;
         this.background = background;
         this.imageURL = imageURL;
+        this.nenType = nenType;
     }
 
     // setters & getters
@@ -61,6 +66,14 @@ public class Hunter {
 
     public String getName(){
         return name;
+    }
+
+    public void setNenType(String nenType){
+        this.nenType = nenType;
+    }
+
+    public String getNenType(){
+        return nenType;
     }
 
     public void setAbilities(String abilities){
