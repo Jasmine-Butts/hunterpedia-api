@@ -1,13 +1,13 @@
 package com.csc340.api;
 
-import java.util.Collections;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/hunters")
+@RequestMapping("/hunters")
 public class HunterApiController {
     
     private final HunterService hunterService;
@@ -17,7 +17,7 @@ public class HunterApiController {
     }
 
     // create a new hunter
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<Hunter> createHunter(@RequestBody Hunter hunter){
         Hunter createdHunter = hunterService.createHunter(hunter);
         if (createdHunter != null){
@@ -28,7 +28,7 @@ public class HunterApiController {
     }
 
     // retrieve all hunters
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<Collection<Hunter>> getAllHunters(){
         return ResponseEntity.ok(hunterService.getAllHunters());
     }
@@ -46,8 +46,8 @@ public class HunterApiController {
 
     // retrieve hunter by nen type
     @GetMapping("/nenType/{nenType}")
-    public ResponseEntity<Collection<Hunter>> getHunterByNenType(@PathVariable String nenType){
-        List<Hunter> hunters = hunterService.getHunterByNenType(nenType);
+    public ResponseEntity<Collection<Hunter>> searchHunterByNenType(@PathVariable String nenType){
+        List<Hunter> hunters = hunterService.searchHunterByNenType(nenType);
         if (hunters != null && !hunters.isEmpty()) {
             return ResponseEntity.ok(hunters);
         } else {
@@ -57,10 +57,10 @@ public class HunterApiController {
 
     // search hunters by name
     @GetMapping("/search")
-    public ResponseEntity<Collection<Hunter>> searchHuntersByName(@RequestParam(required = false) String name){
-        List<Hunters> hunters;
+    public ResponseEntity<Collection<Hunter>> searchHunterByName(@RequestParam(required = false) String name){
+        List<Hunter> hunters;
         if (name != null){
-            hunters = hunterService.searchHuntersByName(name);
+            hunters = hunterService.searchHunterByName(name);
         } else {
             hunters = hunterService.getAllHunters();
         }

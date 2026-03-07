@@ -8,8 +8,8 @@
 		<version>4.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>api</artifactId>
+	<groupId>com.csc340</groupId>
+	<artifactId>hunterpediaapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Hunterpedia-API</name>
 	<description>Backend for Hunterpedia website</description>

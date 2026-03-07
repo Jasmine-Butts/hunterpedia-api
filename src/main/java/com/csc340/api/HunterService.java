@@ -31,7 +31,7 @@ public class HunterService {
                 hunter.setNenType(updatedHunter.getNenType());
                 hunter.setAbilities(updatedHunter.getAbilities());
                 hunter.setBackground(updatedHunter.getBackground());
-                hunter.setImageURL(updatedHunter.getImageURL());
+                hunter.setImageUrl(updatedHunter.getImageUrl());
                 return hunterRepository.save(hunter);
             })
             .orElse(null);
