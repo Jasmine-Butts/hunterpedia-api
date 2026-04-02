@@ -18,7 +18,6 @@ public class Hunter {
     @Column(nullable = false, unique = true)
     public String name;
 
-    @Column(nullable = false)
     public String nenType;
 
     @Column(nullable = false)
@@ -34,8 +33,9 @@ public class Hunter {
     }
 
     // constructor for adding new hunter
-    public Hunter (String name, String abilities, String background, String imageURL, String nenType){
+    public Hunter (String name, String nenType, String abilities, String background, String imageURL){
         this.name = name;
+        this.nenType = nenType;
         this.abilities = abilities;
         this.background = background;
         this.imageURL = imageURL;
@@ -43,9 +43,10 @@ public class Hunter {
     }
 
     // constructor for known id
-    public Hunter (Long hunterId, String name, String abilities, String background, String imageURL, String nenType){
+    public Hunter (Long hunterId, String name, String nenType, String abilities, String background, String imageURL){
         this.hunterId = hunterId;
         this.name = name;
+        this.nenType = nenType;
         this.abilities = abilities;
         this.background = background;
         this.imageURL = imageURL;
