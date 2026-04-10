@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${hunter.name}</title>
-    <link rel="stylesheet" href="/details.css">
+    <title>Not-Found</title>
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/about.css">
 
 </head>
 <body>
@@ -19,7 +20,7 @@
         </div>
 
         <div id="logo">
-            <img src="/images/Hunter-x-Hunter-Emblem.png" alt="Hunter x Hunter Logo" width="100">
+            <img src="static/images/Hunter-x-Hunter-Emblem.png" alt="Hunter x Hunter Logo" width="100">
         </div>
 
     </section>
@@ -35,19 +36,13 @@
         </nav>
     </section>
 
-    <section class="container" id="main">
-        <div class="license-card">
-            <img src="/images/${hunter.imageUrl}" alt="${hunter.name}" width="150">
-            <h2 id="character-name">${hunter.name}</h2>
-        </div>
-        
-        <h3 id="abilities">Abilities</h3>
-        <p id="ability-list">${hunter.abilities}</p>
+    <section class="container">
+        <h1>404 - Hunter Not Found</h1>
 
-        <p id="background-info">${hunter.background}</p> 
+        <p>Sorry, the hunter you are looking for could not be found.</p>
 
-    </section>    
+        <a href="/hunters/all">Return to Home</a>
+    </section>
 
-    
 </body>
 </html>

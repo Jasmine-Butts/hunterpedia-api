@@ -12,12 +12,14 @@
         <h1 id="title">Hunterpedia</h1>
 
         <div id="search">
-            <input type="text" id="search-input" placeholder="Search for a Hunter...">
-            <button id="search-button">Search</button>
+            <form action="/hunters/search" method="get">
+                <input type="text" id="search-input" placeholder="Search the Hunterpedia...">
+                <button id="search-button" type="submit">Search</button>
+            </form>   
         </div>
 
         <div id="logo">
-            <img src="/images/Hunter-x-Hunter-Emblem.png" alt="Hunter x Hunter Logo" width="100">
+            <img src="static/images/Hunter-x-Hunter-Emblem.png" alt="Hunter x Hunter Logo" width="100">
         </div>
 
     </section>
@@ -25,28 +27,42 @@
     <section id="nav">
         <nav>
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/details.html">Details</a></li>
-                <li><a href="/about.html">Learn More</a></li>
-                <li><a href="/new-character-form.html">Add a Hunter</a></li>
+                <li><a href="/hunters/all">Home</a></li>
+                <li><a href="/hunters/details">Details</a></li>
+                <li><a href="/hunters/about">Learn More</a></li>
+                <li><a href="/hunters/new">Add a Hunter</a></li>
             </ul>
         </nav>
     </section>
 
     <section class="container" id="main">
         <h2>Add a New Hunter</h2>
-        <form id="new-character-form">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
+        <form id="new-character-form" action="/hunters/new" method="post">
+          
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="${hunter.name}" required>
+            <br><br>
 
-            <label for="image">Image URL:</label><br>
-            <input type="text" id="image" name="image"><br><br>
+            <label for="Nen Type">Nen Type:</label>
+            <input type="text" id="nen type" name="nenType" value="${hunter.nenType}" required>
+            <br><br>
 
-            <label for="description">Description:</label><br>
-            <textarea id="description" name="description"></textarea><br><br>
+            <label for="Abilities">Abilities:</label>
+            <textarea id="Abilities" name="abilities">${hunter.abilities}</textarea>
+            <br><br>
 
-            <input type="submit" value="Add Hunter">
+            <label for="Background">Background:</label>
+            <textarea id="Background" name="background">${hunter.background}</textarea>
+            <br><br>
+
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" name="imageUrl" value="${hunter.imageUrl}" required>
+            <br><br>
+
+            <button type="submit">Add Hunter</button>
+
         </form>
+    </section>
     
 </body>
 </html>

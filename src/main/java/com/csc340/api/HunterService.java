@@ -42,16 +42,16 @@ public class HunterService {
     }
 
     public List<Hunter> searchHunterByName(String name){
-        return hunterRepository.findByName(name);
+        return hunterRepository.searchByName(name.trim());
 
     }
 
     public List<Hunter> searchHunterByNenType(String nenType){
-        return hunterRepository.findByNenType(nenType);
+        return hunterRepository.findByNenType(nenType.trim());
     }
 
     public List<Hunter> searchHunterByAbilities(String abilities){
-        return hunterRepository.findByAbilities(abilities);
+        return hunterRepository.findByAbilities(abilities.trim());
     }
 
 }
