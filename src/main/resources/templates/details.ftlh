@@ -18,7 +18,7 @@
                     <option value="">All Nen Types</option>
                     <option value="Enhancer">Enhancer</option>
                     <option value="Emitter">Emitter</option>
-                    <option value="Transmutater">Transmutater</option>
+                    <option value="Transmuter">Transmuter</option>
                     <option value="Conjurer">Conjurer</option>
                     <option value="Specialist">Specialist</option>
                 </select>
@@ -47,6 +47,10 @@
             <img src="${hunter.imageUrl}" alt="${hunter.name}" width="150">
             <h2 id="character-name">${hunter.name}</h2>
         </div>
+
+        <a href="/hunters/update/${hunter.hunterId}">
+            <button type="button" id="update-button">Update Hunter</button>
+        </a>
         
         <h3 id="abilities">Abilities</h3>
         <p id="ability-list">${hunter.abilities}</p>

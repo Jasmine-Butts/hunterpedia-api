@@ -20,7 +20,7 @@
                     <option value="">All Nen Types</option>
                     <option value="Enhancer">Enhancer</option>
                     <option value="Emitter">Emitter</option>
-                    <option value="Transmutater">Transmutater</option>
+                    <option value="Transmuter">Transmuter</option>
                     <option value="Conjurer">Conjurer</option>
                     <option value="Specialist">Specialist</option>
                 </select>

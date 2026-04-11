@@ -59,7 +59,7 @@ public class HunterUiController {
         Hunter hunter = hunterService.getHunterById(hunterId);
 
         if (hunter == null){
-            return "about";
+            return "not-found";
         }
         model.addAttribute("hunter", hunter);
         return "update";
