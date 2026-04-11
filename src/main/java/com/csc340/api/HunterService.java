@@ -50,8 +50,8 @@ public class HunterService {
         return hunterRepository.findByNenType(nenType.trim());
     }
 
-    public List<Hunter> searchHunterByAbilities(String abilities){
-        return hunterRepository.findByAbilities(abilities.trim());
+    public List<Hunter> searchByNameAndNenType(String name, String nenType){
+        return hunterRepository.searchByNameAndNenType(name.trim(), nenType.trim());
     }
 
 }

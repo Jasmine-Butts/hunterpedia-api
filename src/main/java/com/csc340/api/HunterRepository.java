@@ -16,6 +16,7 @@ public interface HunterRepository extends JpaRepository<Hunter, Long> {
     @Query("SELECT h FROM Hunter h WHERE LOWER(h.nenType) LIKE LOWER(CONCAT('%', :nenType, '%'))")
     List<Hunter> findByNenType(@Param("nenType") String nenType);
 
-    List<Hunter> findByAbilities(String abilities);
-
+    @Query("SELECT h FROM Hunter h WHERE LOWER(h.name) LIKE LOWER(CONCAT('%', :name, '%')) AND LOWER(h.nenType) LIKE LOWER(CONCAT('%', :nenType, '%'))")
+    
+    List<Hunter> searchByNameAndNenType(@Param("name") String name, @Param("nenType") String nenType);
 }

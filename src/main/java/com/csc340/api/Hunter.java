@@ -16,20 +16,20 @@ public class Hunter {
     private Long hunterId;
 
     @Column(nullable = false, unique = true)
-    public String name;
+    private String name;
 
-    public String nenType;
-
-    @Column(nullable = false)
-    public String abilities;
+    private String nenType;
 
     @Column(nullable = false)
-    public String background;
+    private String abilities;
+
+    @Column(nullable = false)
+    private String background;
 
     @Column(nullable = false, unique = true)
-    public String imageURL;
+    private String imageURL;
     
-    public Hunter(){
+    protected Hunter(){
     }
 
     // constructor for adding new hunter
@@ -50,7 +50,6 @@ public class Hunter {
         this.abilities = abilities;
         this.background = background;
         this.imageURL = imageURL;
-        this.nenType = nenType;
     }
 
     // setters & getters

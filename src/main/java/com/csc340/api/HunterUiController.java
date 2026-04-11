@@ -23,20 +23,8 @@ public class HunterUiController {
         return "about";
     }
 
-    @GetMapping("/{hunterId}")
-    public String getHunter(@PathVariable Long hunterId, Model model){
-        Hunter hunter = hunterService.getHunterById(hunterId);
-
-        if (hunter != null){
-            model.addAttribute("hunter", hunter);
-            return "details";
-        } else {
-            return "not-found";
-        }
-    }
-
     @GetMapping("/details/{hunterId}")
-    public String getHunterDetails(@PathVariable Long hunterId, Model model){
+    public String getHunter(@PathVariable Long hunterId, Model model){
         Hunter hunter = hunterService.getHunterById(hunterId);
 
         if (hunter != null){
@@ -78,13 +66,20 @@ public class HunterUiController {
     }
 
     @GetMapping("/search")
-    public String searchHunters(@RequestParam(required = false) String name, Model model){
-        if (name == null || name.isBlank()){
-            model.addAttribute("hunters", hunterService.getAllHunters());
-        } else {
-            model.addAttribute("hunters", hunterService.searchHunterByName(name));
-        }
-        return "index";
+        public String searchHunters(@RequestParam(required = false) String name, @RequestParam(required = false) String nenType, Model model){
+            boolean noName = (name == null || name.trim().isEmpty());
+            boolean noNenType = (nenType == null || nenType.trim().isEmpty());
+
+            if (noName && noNenType) {
+                model.addAttribute("hunters", hunterService.getAllHunters());
+            } else if (!noName && noNenType) {
+                model.addAttribute("hunters", hunterService.searchHunterByName(name));
+            } else if (noName && !noNenType) {
+                model.addAttribute("hunters", hunterService.searchHunterByNenType(nenType));
+            } else {
+                model.addAttribute("hunters", hunterService.searchByNameAndNenType(name, nenType));
+            }
+            return "index";
     }
 
     @PostMapping("/update/{hunterId}")

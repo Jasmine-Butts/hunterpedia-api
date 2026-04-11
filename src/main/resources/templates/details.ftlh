@@ -13,9 +13,17 @@
 
         <div id="search">
             <form action="/hunters/search" method="get">
-                <input type="text" id="search-input" placeholder="Search the Hunterpedia...">
+                <input type="text" id="search-input" name="name" placeholder="Search the Hunterpedia...">
+                <select name="nenType">
+                    <option value="">All Nen Types</option>
+                    <option value="Enhancer">Enhancer</option>
+                    <option value="Emitter">Emitter</option>
+                    <option value="Transmutater">Transmutater</option>
+                    <option value="Conjurer">Conjurer</option>
+                    <option value="Specialist">Specialist</option>
+                </select>
                 <button id="search-button" type="submit">Search</button>
-            </form>   
+            </form> 
         </div>
 
         <div id="logo">
@@ -28,7 +36,6 @@
         <nav>
             <ul>
                 <li><a href="/hunters/all">Home</a></li>
-                <li><a href="/hunters/details">Details</a></li>
                 <li><a href="/hunters/about">Learn More</a></li>
                 <li><a href="/hunters/new">Add a Hunter</a></li>
             </ul>
@@ -37,7 +44,7 @@
 
     <section class="container" id="main">
         <div class="license-card">
-            <img src="/images/${hunter.imageUrl}" alt="${hunter.name}" width="150">
+            <img src="${hunter.imageUrl}" alt="${hunter.name}" width="150">
             <h2 id="character-name">${hunter.name}</h2>
         </div>
         
