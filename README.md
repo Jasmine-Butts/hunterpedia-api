@@ -449,6 +449,11 @@ https://uncg-my.sharepoint.com/:v:/g/personal/jdbutts_uncg_edu/IQBwFTWcOSydTL1LU
 
 ---
 
+### MVC Demo Video
+
+https://uncg-my.sharepoint.com/:v:/g/personal/jdbutts_uncg_edu/IQAGOKPEy45ARpL31kZAG7VLARkbLoTzilUds5-OyRvPH80?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=hF4Rah
+
+
 ## Database Schema
 
 The application uses a single table to store student data:
